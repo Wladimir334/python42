@@ -59,23 +59,32 @@
 
 
 #------------------------------
+#
+# set_a = [1, 30, 30, 25, 24, 30, 1, 27, 25, 40]
+# uniq_numbers = list(set(set_a))
+# print(uniq_numbers)
+#
+# def new_numbers(uniq_numbers):
+#     new_list = []
+#     new = set(uniq_numbers)
+#     for x in new:
+#         if x > 24:
+#             new_list.append(x)
+#
+#     return new_list
+#
+# result = new_numbers(uniq_numbers)
+# print(result)
 
-set_a = [1, 30, 30, 25, 24, 30, 1, 27, 25, 40]
-uniq_numbers = list(set(set_a))
-print(uniq_numbers)
+# -----------------------------
 
-def new_numbers(uniq_numbers):
-    new_list = []
-    new = set(uniq_numbers)
-    for x in new:
-        if x > 24:
-            new_list.append(x)
+sm = 25
+def meters(sm):
+    meter = sm / 100
+    return meter
 
-    return new_list
+result2 = meters(sm)
+print(result2)
 
-result = new_numbers(uniq_numbers)
-print(result)
+# -----------------------------
 
-dict_num = {
-
-}

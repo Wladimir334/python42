@@ -4,16 +4,16 @@ import shutil
 from fileinput import filename
 
 from os.path import split
-#
-# number_str = "1a2a3a4a5"
-# def get_sum_numbers(number_str):
-#     a = set(number_str)
-#     return a
-#
-#
-#
-# result = get_sum_numbers(number_str)
-# print(result)
+
+number_str = "1a2a3a4a5"
+def get_sum_numbers(number_str):
+    a = set(number_str)
+    return a
+
+
+
+result = get_sum_numbers(number_str)
+print(result)
 
 
 

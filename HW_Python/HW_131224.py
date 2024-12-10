@@ -45,9 +45,20 @@ def words_in_line(poem):
 result6 = words_in_line(poem)
 print('Количество слов в строке: ' + str(result6))
 
-for line in enumerate(poem.splitlines(), start=1):
+from collections import Counter
+import re
 
-    print(f'{line}, {len(poem.splitlines())}')
+words_in_poem = re.findall(r'\r\w+\r', poem.lower())
+
+word_count = Counter(words_in_poem)
+
+repeated_words = {word: count for word, count in word_count.items if count > 1}
+sorted_words = dict(sorted(repeated_words.items, key=lambda item: item[1], reverse=True))
+
+for word, count in sorted_words.items:
+    print(f'{word}: {count}')
+
+
 
 
 

@@ -8,7 +8,7 @@ def get_html(url: str) -> str:
     try:
         response = requests.get(url)
         status = response.status_code
-        if status != 200 and str(status)[0] !=3:
+        if status != 200 and str(status)[0] !='3':
             print(f'Ошибка запроса. Код ответа -  {status}')
             return None
         print(f"Код ответа - {status}")

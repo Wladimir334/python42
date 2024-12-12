@@ -56,3 +56,6 @@ URL = "https://parsinger.ru/html/index1_page_1.html"
 html = get_html(URL)
 if html:
     parse_html(html)
+
+
+# title = title.encode('latini').decode('utf-8')

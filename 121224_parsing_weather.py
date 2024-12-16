@@ -4,7 +4,7 @@ from textwrap import indent
 import requests
 from bs4 import BeautifulSoup as Bs
 from requests.exceptions import ConnectionError
-from fake_useragent import UserAgent
+# from fake_useragent import UserAgent
 
 
 def get_html(url: str) -> str:

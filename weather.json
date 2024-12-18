@@ -1,28 +1,28 @@
 {
-  "Четверг, 12 декабря": {
+  "Среда, 18 декабря": {
     "Ночь": {
-      "weather-temperature": "-1°",
-      "weather_type": "Ясно",
-      "weather-feeling": "-5°",
-      "weather-probability": "2%"
+      "weather-temperature": "-14°",
+      "weather_type": "Частично облачно",
+      "weather-feeling": "-18°",
+      "weather-probability": "12%"
     },
     "Утро": {
-      "weather-temperature": "-2°",
-      "weather_type": "Пасмурно",
-      "weather-feeling": "-6°",
+      "weather-temperature": "-15°",
+      "weather_type": "Частично облачно",
+      "weather-feeling": "-19°",
       "weather-probability": "6%"
     },
     "День": {
-      "weather-temperature": "-3°",
-      "weather_type": "Ясно",
-      "weather-feeling": "-7°",
-      "weather-probability": "16%"
+      "weather-temperature": "-14°",
+      "weather_type": "Преимущественно облачно",
+      "weather-feeling": "-14°",
+      "weather-probability": "4%"
     },
     "Вечер": {
-      "weather-temperature": "-5°",
-      "weather_type": "Незначительная облачность",
-      "weather-feeling": "-10°",
-      "weather-probability": "5%"
+      "weather-temperature": "-12°",
+      "weather_type": "Пасмурно",
+      "weather-feeling": "-12°",
+      "weather-probability": "7%"
     }
   }
 }

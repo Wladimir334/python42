@@ -36,27 +36,14 @@ def words(poem):
     return len(poem.split())
 
 result5 = words(poem)
-print('Количество слов: ' + str(result5))
+print('Количество слов в тексте: ' + str(result5))
 
 
-def words_in_line(poem):
-    return [len(line.split()) for line in poem.splitlines()]
 
-result6 = words_in_line(poem)
-print('Количество слов в строке: ' + str(result6))
 
-from collections import Counter
-import re
 
-words_in_poem = re.findall(r'\r\w+\r', poem.lower())
 
-word_count = Counter(words_in_poem)
 
-repeated_words = {word: count for word, count in word_count.items if count > 1}
-sorted_words = dict(sorted(repeated_words.items, key=lambda item: item[1], reverse=True))
-
-for word, count in sorted_words.items:
-    print(f'{word}: {count}')
 
 
 

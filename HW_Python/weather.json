@@ -13,10 +13,10 @@
       "weather-probability": "28%"
     },
     "День": {
-      "weather-temperature": "-1°",
+      "weather-temperature": "0°",
       "weather_type": "Облачно и слабый снег",
       "weather-feeling": "-4°",
-      "weather-probability": "28%"
+      "weather-probability": "29%"
     },
     "Вечер": {
       "weather-temperature": "+2°",

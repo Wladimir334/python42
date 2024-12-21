@@ -1,4 +1,6 @@
 from http.client import responses
+import json
+from textwrap import indent
 
 import requests
 from bs4 import BeautifulSoup as Bs
@@ -27,19 +29,9 @@ def get_weather_from_week(html: str) -> dict:
     soup = Bs(html, 'html.parser')
 
     weather_info = {}
-    seven_days = soup.find('div', id="content-left").find_all('div', class_="weather-short")
-    # days = soup.find('table')
     day = soup.find('div', class_="dates short-d").text
     weather_info[day] = {}
-
-    days = soup.find_all('div', class_="dates short-d")
-    # for iten in days:
-    #     day = iten.find('div', class_="dates short-d").text
-
     table = soup.find('div', class_="weather-short").find("table")
-    for item in seven_days:
-        print(item)
-
     table_rows = table.find_all('tr')
     for row in table_rows:
         weather_day = row.find('td', class_="weather-day").text
@@ -55,8 +47,10 @@ def get_weather_from_week(html: str) -> dict:
         weather_info[day][weather_day]["weather-probability"] = weather_probability
     return weather_info
 
-result = weather_info
-print(result)
+
+def write_data_to_json(data: dict) -> None:
+    with open('weather_week.json', "w") as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
 
 
 
@@ -64,4 +58,5 @@ print(result)
 URL = "https://world-weather.ru/pogoda/russia/saint_petersburg/7days/"
 html = get_html(url=URL)
 if html:
-    get_weather_from_week(html)
+    data = get_weather_from_week(html)
+    write_data_to_json(data)

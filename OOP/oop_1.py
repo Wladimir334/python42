@@ -90,9 +90,59 @@ class Car:
         else:
             raise ValueError("Неправильный цвет")
 
+    # Getter для получения значения скорости
+    @property
+    def speed(self):
+        return self.__speed
+
+    @speed.setter
+    def speed(self, value):
+        if value > 300:
+            raise ValueError("Max speed 300")
+        self.__speed = value
+
+
+# Дочерний класс грузовых машин
+class Truck(Car):
+    # указываем характеристики родительского и новые характеристики дочернего класса
+    def __init__(self, brand, model, year, power, capacity, axles, currency="RUB"):
+        #  вызываем конструтор родительского класса с его параметрами через функцию super()
+        super().__init__(brand, model, year, power, currency="RUB")
+        self.capacity = capacity
+        self.axles = axles
+        self.__speed = 200
+
+
+    def tilt_trailer(self):
+        print(f"{self.brand} {self.model} tilt trailer")
+
+    def power_off(self):
+        super().power_off()
+        print("The method of Truck class")
+
 
 car_audi = Car(brand="Audi", model="A6", year=2024, power=249)
 car_bmw = Car(brand="BMW", model="X7", year=2024, power=500)
+
+
+
+
+truck = Truck(brand="Volvo", model="xxx", year=2019, power=500, capacity=4100, axles=4)
+truck.power_on()
+truck.tilt_trailer()
+truck.power_off()
+
+
+
+
+
+
+
+
+
+# car_bmw.speed = 300
+# print(car_bmw.speed)
+
 
 # car_audi.go()
 # car_bmw.go()
@@ -112,19 +162,19 @@ car_bmw = Car(brand="BMW", model="X7", year=2024, power=500)
 # car_bmw.turn()
 
 
-car_audi.power_off()
-car_audi.go()
-car_bmw.turn(direction="right")
-car_audi.power_on()
-car_audi.power_on()
-car_audi.go()
-car_bmw.turn(direction="right")
-car_audi.power_off()
-car_audi.power_off()
+# car_audi.power_off()
+# car_audi.go()
+# car_bmw.turn(direction="right")
+# car_audi.power_on()
+# car_audi.power_on()
+# car_audi.go()
+# car_bmw.turn(direction="right")
+# car_audi.power_off()
+# car_audi.power_off()
 
 # car_audi._color = "green"
 # print(car_audi._color)
 
 # print(car_audi.__speed)
 
-print(car_audi._Car__speed)
+# print(car_audi._Car__speed)

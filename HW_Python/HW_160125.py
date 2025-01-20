@@ -4,7 +4,7 @@ class Animals:
     def __init__(self, type, living_environment, predator_or_herbivore, speed_moving):
         self.type = type
         self.living_environment = living_environment
-        self.predator_or_herbivore = True
+        self.predator_or_herbivore = "predator"
         self.speed_moving = speed_moving
         self._colors = ""
         self.__rare = "Ordinary"
@@ -29,29 +29,40 @@ class Animals:
         if self.is_awake:
             print(f"There is {self.type} eat food at {self.living_environment}.")
         else:
-            print("It must wake up!")
+            print(f"{self.type} must wake up!")
 
     def moving(self):
         if self.is_awake:
             print(f"The {self.type} moves at a speed of {self.speed_moving} km per hour.")
         else:
-            print("It must wake up!")
+            print(f"{self.type} must wake up!")
 
     def hunting(self):
         if self.is_awake:
             print(f"The {self.type} is ready for hunting.")
-        elif self.predator_or_herbivore:
-            print(f"The {self.type} is hunting")
-        elif not self.predator_or_herbivore:
-            print(f"The {self.type} is herbivore")
         else:
-            print("It must wake up!")
+            print(f"{self.type} must wake up!")
 
     def drinking(self):
         if self.is_awake:
             print(f"The {self.type} is drinking.")
         else:
-            print("It must wake up!")
+            print(f"{self.type} must wake up!")
+
+    @property
+    def rare(self):
+        return self.__rare
+
+    @rare.setter
+    def rare(self, value):
+        self.__rare = value
+
+tiger = Animals(type="Tiger", living_environment="Jungle", predator_or_herbivore="predator", speed_moving="70")
+
+tiger.drinking()
+tiger.wake_up()
+tiger.drinking()
+print(tiger.rare)
 
 class Dog(Animals):
     def __init__(self, type, living_environment, predator_or_herbivore, speed_moving, name, age, breed):
@@ -71,14 +82,6 @@ class Dog(Animals):
         super().sleep()
         print(f"{self.type} {self.name} is sleeping in the {self.living_environment}.")
 
-    @property
-    def rare(self):
-        return self.__rare
-
-    @rare.setter
-    def rare(self):
-        self.__rare = "unusual"
-
 
 dog = Dog(type="Dog", living_environment="house", predator_or_herbivore="predator", speed_moving="25", name="Barabulka", age=2, breed="German shepherd")
 
@@ -88,8 +91,4 @@ dog.eating()
 dog.playing()
 dog.hunting()
 dog.moving()
-dog.sleep()
-dog.moving()
 
-dog.sleep()
-_dog.__rare()

@@ -95,6 +95,7 @@ class Car:
     def speed(self):
         return self.__speed
 
+    # Setter для получения значения скорости
     @speed.setter
     def speed(self, value):
         if value > 300:

@@ -5,7 +5,8 @@ import string
 class PasswordGenerator:
     special_chars = "!#$%&()_*@"
 
-    def __init__(self, min_length=6,
+    def __init__(self,
+                 min_length=6,
                  max_length=12,
                  use_uppercase=False,
                  use_special_chars=False):
